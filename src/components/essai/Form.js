@@ -10,7 +10,7 @@ const Form = () => {
   const { car, updateCar } = useCarStore();
   const [query, setQuery] = useState("");
   const { mapClicked } = mapStore();
-  const { updateMapClicked } = mapStore();  
+  const { updateMapClicked } = mapStore();
   const [clicked, setClicked] = useState("");
 
   const {
@@ -124,7 +124,7 @@ const Form = () => {
           <input
             type="hidden"
             name="retURL"
-            value={`https://ar-essai-devis-red.vercel.app?cityId=${cityId}&type=essai`}
+            value={`https://testingcloc.vercel.app/?cityId=${cityId}&type=essai`}
           />
           <input type="hidden" name="oid" value="00D8d000009q2y7" />
           {/* <input type="hidden" name="debug" value="1" /> */}
