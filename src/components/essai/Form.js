@@ -124,7 +124,7 @@ const Form = () => {
           <input
             type="hidden"
             name="retURL"
-            value={`https://testingcloc.vercel.app/?cityId=${cityId}&type=essai`}
+            value={`https://testingcloc.vercel.app?cityId=${cityId}&type=essai`}
           />
           <input type="hidden" name="oid" value="00D8d000009q2y7" />
           {/* <input type="hidden" name="debug" value="1" /> */}
