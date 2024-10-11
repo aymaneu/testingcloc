@@ -5,31 +5,13 @@ import { useCarStore } from "../../store/devis/car";
 import { cityInfo } from "../../data/address";
 import { cn } from "../../utils/cn";
 import { useInfoStore } from "../../store/devis/carInfo";
-import { mapStore } from "../../store/devis/map";
 const Form = () => {
   const { car, updateCar } = useCarStore();
   const [query, setQuery] = useState("");
-  const { mapClicked } = mapStore();
-  const { updateMapClicked } = mapStore();
   const [clicked, setClicked] = useState("");
 
   const {
-    civilité,
-    prénom,
-    nom,
-    email,
-    tel,
     address,
-    callType,
-    siren,
-    marketing,
-    communication,
-    profilage,
-    done,
-    map,
-    label,
-    ville,
-    finition,
     updateFinition,
     updateVille,
     updateCivilité,
@@ -42,9 +24,6 @@ const Form = () => {
     updateLabel,
     updateSiren,
     updateMarketing,
-    updateCommunication,
-    updateProfilage,
-    updateDone,
     setSec,
     updateCityId,
     cityId,
@@ -58,32 +37,6 @@ const Form = () => {
       : fixedData.filter((person) => {
           return person.address.toLowerCase().includes(query.toLowerCase());
         });
-  console.log(car);
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-
-  //   // Create a FormData object from the form
-  //   const formData = new FormData(form);
-
-  //   try {
-  //     const response = await fetch(form.action, {
-  //       method: form.method,
-  //       body: formData,
-  //       mode: "no-cors",
-  //     });
-
-  //     if (response.ok || response.type === "opaque") {
-  //       // alert("Form submitted successfully!");
-  //       updateDone(true);
-  //     } else {
-  //       alert("Form submission failed.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error submitting form:", error);
-  //     alert("Form submission failed.");
-  //   }
-  // };
 
   return (
     <motion.div
@@ -127,12 +80,6 @@ const Form = () => {
             value={`https://testingcloc.vercel.app?cityId=${cityId}&type=devis`}
           />
           <input type="hidden" name="oid" value="00D8d000009q2y7" />
-          {/* <input type="hidden" name="debug" value="1" /> */}
-          {/* <input
-            type="hidden"
-            name="debugEmail"
-            value="ayoub.markhouss@gmail.com"
-          /> */}
           <input
             id="00N8d00000UVYP7"
             name="00N8d00000UVYP7"
@@ -429,62 +376,10 @@ const Form = () => {
                 les conditions générales et la politique de confidentialité
               </a>
             </div>
-            {/* <div className="pt-3 items-center grid md:grid-cols-3 mb-3">
-              <div className="flex items-center">
-                <input
-                  onClick={() => updateProfilage(true)}
-                  value=""
-                  type="radio"
-                  name="B"
-                  className="relative float-left  h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-black checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
-                />
-                <label className="semi pl-2">J&apos;ACCEPTE</label>
-              </div>
-              <div className="flex items-center ">
-                <input
-                  onClick={() => updateProfilage(false)}
-                  type="radio"
-                  name="B"
-                  value=""
-                  className="relative float-left  h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-black checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
-                />
-                <label className="semi pl-2">JE REFUSE</label>
-              </div>
-              <a className="semi max-w-96 underline text-[7px] ">
-                LES ACTIVITÉS DE PROFILAGE
-              </a>
-            </div>
-            <div className="grid md:grid-cols-3 pt-3 items-center mb-3">
-              <div className="flex items-center">
-                <input
-                  onClick={() => updateCommunication(true)}
-                  value=""
-                  type="radio"
-                  name="C"
-                  className="relative float-left  h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-black checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
-                />
-                <label className="semi pl-2">J&apos;ACCEPTE</label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  onClick={() => updateCommunication(false)}
-                  type="radio"
-                  name="C"
-                  value=""
-                  className="relative float-left  h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-black checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
-                />
-                <label className="semi pl-2">JE REFUSE</label>
-              </div>
-              <a className="semi max-w-96 underline text-[7px] ">
-                LA COMMUNICATION DE MES DONNÉES À DES TIERS POUR LEURS ACTIVITÉS
-                DE MARKETING
-              </a>
-            </div> */}
           </div>
           <button
             type="submit"
             name="submit"
-            // onClick={() => }
             className="semi h-12 text-white px-7 bg-[#ba0816] mt-14 flex items-center justify-center"
           >
             ÉTAPE SUIVANTE

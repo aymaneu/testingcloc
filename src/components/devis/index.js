@@ -34,7 +34,7 @@ const Index = () => {
         <Steps />
         {Number(cityId) === 0 && car === "" && <Models />}
         {Number(cityId) === 0 && <Form />}
-        {Number(cityId) >= 1 && <Map cityId={cityId} />}
+        {Number(cityId) >= 1 && !mapClicked && <Map cityId={cityId} />}
         {mapClicked && <Merci />}
       </div>
     </div>
