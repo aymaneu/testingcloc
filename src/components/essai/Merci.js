@@ -16,12 +16,11 @@ const Merci = () => {
         opacity: 0,
       }}
       animate={{
-        top: mapClicked ? "10%" : "100%",
+        top: mapClicked ? "40%" : "100%",
         opacity: mapClicked ? 1 : 0,
       }}
       className={cn(
-        "bg-[#F4F4F4] absolute w-full h-full px-5 md:px-20 py-20 mt-6 md:mt-0",
-        mapClicked ? "z-40" : "-z-50"
+        "bg-[#F4F4F4] z-50 absolute w-screen h-[155vh] px-5 md:px-20 pt-14 mb-36 mt-6 md:mt-0"
       )}
     >
       <div className="pl-5 md:pl-0">

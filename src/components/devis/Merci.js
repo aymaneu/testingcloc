@@ -20,7 +20,7 @@ const Merci = () => {
         opacity: mapClicked ? 1 : 0,
       }}
       className={cn(
-        "bg-[#F4F4F4] absolute w-full h-full px-5 md:px-20 py-20 mt-6 md:mt-0",
+        "bg-[#F4F4F4] absolute w-screen h-screen px-5 md:px-20 py-20 mt-6 md:mt-0",
         mapClicked ? "z-40" : "-z-50"
       )}
     >

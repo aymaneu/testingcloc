@@ -30,19 +30,7 @@ const Merci = () => {
         <h2 className="semi font-bold">Quoi d'autre?</h2>
       </div>
       <div className="grid md:grid-cols-3 pt-10">
-        <div className="flex flex-col justify-center items-center text-center gap-5 pt-10 md:pt-0">
-          {/* <p className="semi text-sm max-w-80">
-            Découvrez les brochures des autres modèles
-          </p>
-          <button className=" border-[#8f0c25] border-2 bg-white md:mt-14 flex items-center justify-center">
-            <a
-              href="https://www.alfaromeo.fr/brochure"
-              className="semi h-12 text-black px-7 flex justify-center items-center"
-            >
-              EN SAVOIR PLUS
-            </a>
-          </button> */}
-        </div>
+        <div className="flex flex-col justify-center items-center text-center gap-5 pt-10 md:pt-0"></div>
         <div className="flex flex-col justify-center items-center text-center gap-5 pt-10 md:pt-0">
           <p className="semi text-sm max-w-80">
             Téléchargez votre brochure. Vous allez également recevoir un email
@@ -58,19 +46,7 @@ const Merci = () => {
             </a>
           </button>
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-5 pt-10 md:pt-0">
-          {/* <p className="semi text-sm max-w-80">
-            Découvrez toutes les promotions Alfa Romeo!
-          </p>
-          <button className=" border-[#8f0c25] border-2 bg-white md:mt-14 flex items-center justify-center">
-            <a
-              href="https://www.alfaromeo.fr/offres"
-              className="semi h-12 text-black px-7 flex justify-center items-center"
-            >
-              VOIR LES PROMOTIONS
-            </a>
-          </button> */}
-        </div>
+        <div className="flex flex-col justify-center items-center text-center gap-5 pt-10 md:pt-0"></div>
       </div>
     </motion.div>
   );

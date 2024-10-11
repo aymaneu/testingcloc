@@ -77,7 +77,7 @@ const Form = () => {
           <input
             type="hidden"
             name="retURL"
-            value={`https://testingcloc.vercel.app?cityId=${cityId}&type=devis`}
+            value={`https://18aa-154-144-247-237.ngrok-free.app?cityId=${cityId}&type=devis`}
           />
           <input type="hidden" name="oid" value="00D8d000009q2y7" />
           <input
@@ -194,7 +194,7 @@ const Form = () => {
               {clicked && query !== "" && (
                 <div
                   className={cn(
-                    "z-50 absolute divide-y w-full bg-white",
+                    "z-50 absolute divide-y w-full bg-[#F4F4F4]",
                     filteredPeople.length > 0 && clicked
                       ? "border-2 border-black"
                       : ""
