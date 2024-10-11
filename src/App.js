@@ -2,12 +2,7 @@ import "./App.css";
 import { useStatusStore } from "./store/status";
 import { cn } from "./utils/cn";
 import Essai from "./components/essai";
-import Brochure from "./components/brochure";
 import Devis from "./components/devis";
-import Models from "./components/essai/Models";
-import Form from "./components/essai/Form";
-import Map from "./components/essai/map";
-import Merci from "./components/essai/Merci";
 
 function App() {
   const searchParams = window.location.search;
@@ -53,5 +48,4 @@ export default App;
 const statusInfo = [
   { label: "Essai", comp: Essai },
   { label: "Devis", comp: Devis },
-  // { label: "Brochure", comp: Brochure },
 ];
